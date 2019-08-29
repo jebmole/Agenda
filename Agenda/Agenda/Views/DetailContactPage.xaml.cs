@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Agenda.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,15 @@ namespace Agenda.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DetailContactPage : ContentPage
     {
-        public DetailContactPage()
+        public DetailContactPage(Contact contact)
         {
             InitializeComponent();
+            LoadData(contact);
+        }
+
+        private void LoadData(Contact contact)
+        {
+            gridDatos.BindingContext = contact;
         }
     }
 }

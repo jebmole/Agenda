@@ -1,9 +1,5 @@
-﻿using Agenda.Models;
-using System;
+﻿using Agenda.Domain;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -31,6 +27,12 @@ namespace Agenda.Views
             };
 
             lsContacts.ItemsSource = contactsList;
+        }
+
+        private async void Contact_Selected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var contactSelected = (Contact)e.SelectedItem;
+            await Navigation.PushAsync(new DetailContactPage(contactSelected));
         }
     }
 }

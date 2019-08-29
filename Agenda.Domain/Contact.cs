@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Agenda.Models
+namespace Agenda.Domain
 {
     public class Contact
     {

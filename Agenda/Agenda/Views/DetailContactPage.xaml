@@ -4,12 +4,37 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Agenda.Views.DetailContactPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+             x:Class="Agenda.Views.DetailContactPage"
+             Title="Detalle Contacto">
+    
+    <Grid x:Name="gridDatos" BackgroundColor="White" RowSpacing="10" Padding="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6*" />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Image Source="{Binding ImageUrl}" Grid.ColumnSpan="2" Grid.Row="0" />
+        <Label Text="{Binding FullName}" Grid.ColumnSpan="2" Grid.Row="1"
+               HorizontalOptions="Center" FontSize="Large" FontAttributes="Bold"/>
+
+        <Label Text="Celular" Grid.Column="0" Grid.Row="2" />
+        <Label Text="{Binding PhoneNumber}" Grid.Column="1" Grid.Row="2" />
+
+        <Label Text="Email" Grid.Column="0" Grid.Row="3" />
+        <Label Text="{Binding Email}" Grid.Column="1" Grid.Row="3" />
+
+        <Label Text="LinkedIn" Grid.Column="0" Grid.Row="4" />
+        <Label Text="{Binding LinkedIn}" Grid.Column="1" Grid.Row="4" />
+
+        <Label Text="SkypeId" Grid.Column="0" Grid.Row="5" />
+        <Label Text="{Binding SkypeId}" Grid.Column="1" Grid.Row="5" />
+    </Grid>
 </ContentPage>
